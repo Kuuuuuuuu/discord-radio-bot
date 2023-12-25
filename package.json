@@ -1,0 +1,39 @@
+{
+  "name": "discord-radio-24-7",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "prettier": "prettier --write .",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "author": {
+    "name": "Nayuki",
+    "email": "me@nayuki.cyou",
+    "url": "https://github.com/Kuuuuuuuu"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/voice": "^0.16.1",
+    "colorette": "^2.0.20",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "ffmpeg-static": "^5.2.0",
+    "opusscript": "^0.0.8",
+    "tweetnacl": "^1.0.3",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-unicorn": "^50.0.1",
+    "prettier": "^3.1.1"
+  }
+}
