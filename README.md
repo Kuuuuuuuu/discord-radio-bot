@@ -3,7 +3,8 @@
 a simple Discord bot that play a live stream in a voice channel
 
 ### Requirements :warning:
-- Node.js v16.6.0 or higher
+- Node.js lts or higher
+- ffmpeg (if linux you can install it with `sudo apt install ffmpeg` or npm install ffmpeg-static)`
 
 ### Setup :gear:
 1. Clone the repository 
