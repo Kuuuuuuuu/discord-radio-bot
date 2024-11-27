@@ -11,11 +11,8 @@ import {
 
 import * as dotenv from 'dotenv';
 import * as colorette from 'colorette';
-import ytdl from 'ytdl-core';
 
 dotenv.config();
-
-let liveName = '';
 
 const client = new Client({
   intents: [IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildVoiceStates],
@@ -27,7 +24,7 @@ client.once('ready', () => {
 
   setInterval(() => {
     init();
-    client.user.setActivity(`🎵 ${liveName}`, {type: ActivityType.Listening});
+    client.user.setActivity(`🎵 24/7 Radio`, {type: ActivityType.Listening});
   }, 30_000);
 
   setInterval(() => {
@@ -82,20 +79,7 @@ async function init(pause = false) {
       }
     });
 
-    const stream = ytdl(config.youtubeURL, {
-      highWaterMark: 15 << 20, // 15 MB
-      liveBuffer: 15_000, // buffer 15 secs of live stream
-    });
-
-    const info = await ytdl.getBasicInfo(config.youtubeURL);
-    const vtitle = info.videoDetails.title;
-
-    if (liveName !== vtitle) {
-      console.log(colorette.green(`Now playing: ${vtitle}`));
-      liveName = vtitle;
-    }
-
-    const resource = createAudioResource(stream, {
+    const resource = createAudioResource(config.url, {
       inlineVolume: true,
     });
 
