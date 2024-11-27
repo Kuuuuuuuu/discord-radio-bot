@@ -77,7 +77,7 @@ async function init(pause = false) {
     });
 
     player.on('stateChange', (oldState, newState) => {
-      if (oldState.status === 'playing' && newState.status === 'idle') {
+      if (newState.status === 'idle') {
         init(true);
       }
     });
